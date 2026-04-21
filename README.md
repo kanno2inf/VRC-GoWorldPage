@@ -1,12 +1,12 @@
 # VRC-GoWorldPage
 
-VRChatの写真からワールドページを開くプログラム。(Go版)
+VRChatの写真からワールドページを開くプログラム。(Windows用)
 
 ## 使い方
 
 [Release page](https://github.com/kanno2inf/VRC-GoWorldPage/releases)からzipファイルをダウンロードして展開してください。
 
-**VRC-GoWorldPage.exe.**に画像ファイルをドラッグアンドドロップするとワールドページを開きます。
+**VRC-GoWorldPage.exe** に画像ファイルをドラッグアンドドロップするとワールドページを開きます。
 
 ## ビルド方法
 
