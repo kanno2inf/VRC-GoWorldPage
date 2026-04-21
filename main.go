@@ -14,7 +14,7 @@ import (
 
 const VRCHATWorldURLFormat = "https://vrchat.com/home/world/%s/info"
 
-// loadXMP は画像ファイルから XMP メタデータ文字列を抽出する
+// 画像ファイルからXMPメタデータ文字列を抽出
 func loadXMP(imagePath string) (string, error) {
 	data, err := os.ReadFile(imagePath)
 	if err != nil {
@@ -38,7 +38,7 @@ func loadXMP(imagePath string) (string, error) {
 	return string(data[start:end]), nil
 }
 
-// getWorldIDFromImage は画像ファイルの XMP メタデータから WorldID を抽出する
+// 画像ファイルのXMPメタデータからWorldIDを抽出
 func getWorldIDFromImage(imagePath string) (string, error) {
 	xmpString, err := loadXMP(imagePath)
 	if err != nil {
@@ -71,7 +71,7 @@ func getWorldIDFromImage(imagePath string) (string, error) {
 	return "", nil
 }
 
-// openWorldPage はデフォルトブラウザで URL を開く
+// デフォルトブラウザを開く
 func openWorldPage(worldID string) error {
 	worldURL := fmt.Sprintf(VRCHATWorldURLFormat, worldID)
 
@@ -88,7 +88,7 @@ func openWorldPage(worldID string) error {
 	return cmd.Start()
 }
 
-// waitForEnter はユーザーに Enter キー入力を促して終了を待つ
+// キー入力されるまで待機
 func waitForEnter() {
 	fmt.Println()
 	fmt.Println("Enterキーを押すと終了します...")
@@ -147,7 +147,7 @@ func main() {
 		hadError = true
 	}
 
-	// 途中でエラーがあった場合も、メッセージを確認できるように待機する
+	// 途中でエラーがあった場合、メッセージを確認用に待機
 	if hadError {
 		waitForEnter()
 	}
